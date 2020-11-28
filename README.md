@@ -23,6 +23,7 @@ You can test a small snipped of code (e.g. JSON parsing and manipulation) using 
  - Note that you will need to delete the output folder if it already exists: `hadoop fs -rm -r /user/rfox12/product_fields` otherwise you will get an "Exception in thread "main" org.apache.hadoop.mapred.FileAlreadyExistsException: Output directory hdfs://dsba-nameservice/user/... type of error.
  - Now we execute the map-reduce job: `HADOOP_CLASSPATH=$(hbase mapredcp):/etc/hbase/conf hadoop jar process_products.jar AmazonProductAnalyzeFields '/user/rfox12/product_fields'`
  - Once that job completes, you can concatenate the output across all output files with: `hadoop fs -cat /user/rfox12/product_fields/*` or if you have output that is too big for displaying on the terminal screen you can do `hadoop fs -cat /user/rfox12/product_fields/* > output.txt` to redirect all output to `output.txt`
+ - copying the output to your local machine can be done with `scp` (for windows/putty `pscp -P 22 rfox12@dsba-hadoop.uncc.edu:/users/rfox12/dsba-6190/test.txt .`)
  
  The output is:
  |field            |count       |
