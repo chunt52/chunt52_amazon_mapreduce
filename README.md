@@ -39,6 +39,6 @@ You can test a small snipped of code (e.g. JSON parsing and manipulation) using 
  This code compares the reviews within a item containing the words "reviews" or "comments" with the total average rating of that item and displays the difference in bins. The output is:
 | difference |  count  |
 |:----------:|:-------:|
-|    3<x≤5   | 2741075 |
-|    0<x≤2   |  913967 |
-|    2<x≤3   |  167839 |
+|    0<x≤2   |  902430 |
+|    2<x≤3   |  71836  |
+|    3<x≤5   |  29527  |
