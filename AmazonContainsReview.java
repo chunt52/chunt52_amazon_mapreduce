@@ -195,11 +195,15 @@ public class AmazonContainsReview extends Configured implements Tool {
 	public static class DiffMapReduceReducer extends Reducer<Text, Text, Text, Text> {
 		@Override
 		public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
+			int count = 0;
 			double diff = 0.0;
 			for (Text value : values) {
 				diff = Math.abs(diff - Double.valueOf(value.toString()));
+				count++;
 			}
-			context.write(key, new Text(String.valueOf(diff)));
+			if (count > 1) {
+				context.write(key, new Text(String.valueOf(diff)));
+			}
 		}
 	}
 
