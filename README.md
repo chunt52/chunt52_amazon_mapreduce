@@ -34,9 +34,11 @@ You can test a small snipped of code (e.g. JSON parsing and manipulation) using 
    - `hadoop fs -cat /user/chunt52/review_diff/* > output2.txt` 
    - `hadoop fs -cat /user/chunt52/review_bins/* > output3.txt`
  - Copying the output to your local machine can be done with `scp` (for windows/putty `pscp -P 22 chunt52@dsba-hadoop.uncc.edu:/users/chunt52/dsba-6190/test.txt .`)
-This code compares the reviews within a item containing the words "reviews" or "comments" with the total average rating of that item and displays the difference in bins. The output is:
-|bin            |count       |
-|-----------------|-----------:|
-|Difference:3<x≤5|2741075|
-|Difference:0<x≤2|913967|
-|Difference:2<x≤3|167839|
+
+
+ This code compares the reviews within a item containing the words "reviews" or "comments" with the total average rating of that item and displays the difference in bins. The output is:
+| difference |  count  |
+|:----------:|:-------:|
+|    3<x≤5   | 2741075 |
+|    0<x≤2   |  913967 |
+|    2<x≤3   |  167839 |

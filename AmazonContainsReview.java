@@ -219,7 +219,7 @@ public class AmazonContainsReview extends Configured implements Tool {
 				String [] bin_labels = new String[]{"0<x≤2", "2<x≤3","3<x≤5"};
 				for (int i = 0; i <= bins.length; i++) {
 					if(Double.valueOf(diff) <= bins[i]) {
-						context.write(new Text("Difference:" + bin_labels[i]),new Text("1"));
+						context.write(new Text(bin_labels[i]),new Text("1"));
 						break;
 					}
 				}
